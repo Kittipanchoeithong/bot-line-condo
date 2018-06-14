@@ -22,11 +22,19 @@ con.connect(function (err) {
 
 
 app.post('/webhook', (req, res) => {
-    let reply_token = req.body.events[0].message.text
-    console.log("XXXXXXXXXXXXXXXXXXXXXX ",reply_token)
+    let msg = req.body.events[0].message.text
+    var re = new RegExp("[r][e][g][i][s][t][e][r]");
+    if (re.test(msg)) {
+        console.log("Valid", msg);
+    } else {
+        console.log("Invalid", msg);
+    }
     res.sendStatus(200)
 })
 
 app.listen(process.env.PORT || 3000)
+
+
+
 
 
