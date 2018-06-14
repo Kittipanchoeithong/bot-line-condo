@@ -44,11 +44,11 @@ function reply(reply_token) {
         replyToken: reply_token,
         messages: [{
             type: 'text',
-            text: 'Hello'
+            text: 'ควยฝน'
         },
         {
             type: 'text',
-            text: 'How are you?'
+            text: 'มานั่งดูงานบ้าง'
         }]
     })
     request.post({
