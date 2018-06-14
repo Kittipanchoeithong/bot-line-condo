@@ -24,10 +24,16 @@ con.connect(function (err) {
 app.post('/webhook', (req, res) => {
     let reply_token = req.body.events[0].replyToken
     let user_id = req.body.events[0].source.userId
+    let msg = req.body.events[0].message.text
+
+    if (msg == "สวัสดี" || msg == "hello") {
+        reply(user_id, "สวัสดีเราคือใคร ใครคือเรา")
+    } else {
+        reply(user_id, "มันคืออะไรหรอ ?")
+    }
     // reply(reply_token)
-    reply(user_id)
+    // reply(user_id)
     console.log(user_id)
-    // let msg = req.body.events[0].message.text
     // var re = new RegExp("[r][e][g][i][s][t][e][r]");
     // if (re.test(msg)) {
     //     console.log("Valid", msg);
@@ -38,7 +44,7 @@ app.post('/webhook', (req, res) => {
 })
 
 
-function reply(user_id) {
+function reply(user_id, send_msg) {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer {a7FvVoAOXfMdUFIjyUvYlasoDBi0OP8ZvkzALFr1SmgaFs+eeTwzmqj/Z+MWwRlCpCZgpU1SqLHPAcULoCfEmzxkmkY8NaEyyHR7Sbl1t1VFCMZMoxNA1NeB+VI4VdIcqpOZ0sy2ThZl+C3v6zpk3wdB04t89/1O/w1cDnyilFU=}'
@@ -47,11 +53,7 @@ function reply(user_id) {
         to: user_id,
         messages: [{
             type: 'text',
-            text: 'ควยฝน'
-        },
-        {
-            type: 'text',
-            text: 'มานั่งดูงานบ้าง'
+            text: send_msg
         }]
     })
     request.post({
