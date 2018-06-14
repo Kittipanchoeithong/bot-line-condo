@@ -55,7 +55,7 @@ function reply(user_id) {
         }]
     })
     request.post({
-        url: 'https://api.line.me/v2/bot/message/reply',
+        url: 'https://api.line.me/v2/bot/message/push',
         headers: headers,
         body: body
     }, (err, res, body) => {
