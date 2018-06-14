@@ -10,12 +10,18 @@ app.use(bodyParser.json())
 var con = mysql.createConnection({
     host: "35.186.157.171",
     user: "root",
-    password: "123456"
+    password: "123456",
+    database: "condo"
 });
 
 con.connect(function (err) {
     if (err) throw err;
     console.log("Connected!");
+    var sql = "SELECT * FROM user";
+    con.query(sql, function (err, result, fields) {
+        if (err) throw err;
+        console.log(result);
+    });
 });
 
 
