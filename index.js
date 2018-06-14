@@ -32,20 +32,20 @@ app.post('/webhook', (req, res) => {
     let user_id = req.body.events[0].source.userId
     let msg = req.body.events[0].message.text
 
-    if (msg == "สวัสดี" || msg == "hello") {
-        reply(user_id, "สวัสดีเราคือใคร ใครคือเรา")
-    } else {
-        reply(user_id, "มันคืออะไรหรอ ?")
-    }
+
     // reply(reply_token)
     // reply(user_id)
-    console.log(user_id)
-    // var re = new RegExp("[r][e][g][i][s][t][e][r]");
-    // if (re.test(msg)) {
-    //     console.log("Valid", msg);
-    // } else {
-    //     console.log("Invalid", msg);
-    // }
+
+    var re = new RegExp("[r][e][g][i][s][t][e][r]");
+    if (re.test(msg)) {
+        console.log("Valid", msg);
+    } else {
+        if (msg == "สวัสดี" || msg == "hello") {
+            reply(user_id, "สวัสดีเราคือใคร ใครคือเรา")
+        } else {
+            reply(user_id, "มันคืออะไรหรอ ?")
+        }
+    }
     res.sendStatus(200)
 })
 
