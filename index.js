@@ -1,7 +1,11 @@
 const express = require('express')
-const mysql = require('mysql');
+const bodyParser = require('body-parser')
 const request = require('request')
+const mysql = require('mysql')
+
 var app = express()
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 var con = mysql.createConnection({
     host: "35.186.157.171",
