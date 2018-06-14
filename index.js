@@ -22,8 +22,8 @@ con.connect(function (err) {
 
 
 app.post('/webhook', (req, res) => {
-    let reply_token = req.body.events[0].replyToken
-    console.log(reply_token)
+    let reply_token = req.body.events[0].message.text
+    console.log("XXXXXXXXXXXXXXXXXXXXXX ",reply_token)
     res.sendStatus(200)
 })
 
