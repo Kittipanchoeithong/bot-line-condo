@@ -26,13 +26,14 @@ app.post('/webhook', (req, res) => {
     let user_id = req.body.events[0].source.userId
     // reply(reply_token)
     reply(user_id)
-    let msg = req.body.events[0].message.text
-    var re = new RegExp("[r][e][g][i][s][t][e][r]");
-    if (re.test(msg)) {
-        console.log("Valid", msg);
-    } else {
-        console.log("Invalid", msg);
-    }
+    console.log(user_id)
+    // let msg = req.body.events[0].message.text
+    // var re = new RegExp("[r][e][g][i][s][t][e][r]");
+    // if (re.test(msg)) {
+    //     console.log("Valid", msg);
+    // } else {
+    //     console.log("Invalid", msg);
+    // }
     res.sendStatus(200)
 })
 
