@@ -43,7 +43,7 @@ app.post('/webhook', (req, res) => {
         var sql = "SELECT * FROM user WHERE Rendom = 'msg' ";
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
-            console.log(result);
+            console.log(555,result);
         });
     } else {
         if (msg == "สวัสดี" || msg == "hello") {
