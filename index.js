@@ -40,7 +40,7 @@ app.post('/webhook', (req, res) => {
     var re = new RegExp("[r][e][g][i][s][t][e][r]");
     if (re.test(msg)) {
         console.log("Valid", msg);
-        var sql = "SELECT * FROM user WHERE Rendom = 'msg' ";
+        var sql = "SELECT * FROM user WHERE Rendon = msg ";
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
             console.log(555,result);
