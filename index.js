@@ -43,6 +43,10 @@ app.post('/webhook', (req, res) => {
         var sql = "SELECT * FROM user WHERE Rendom = '" + msg + "' ";
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
+            var sqli = "UPDATE user SET Key = '" + user_id + "' WHERE Rendom = '" + msg + "' ";
+            con.query(sqli, function (err, result, fields) {
+
+        });
             console.log(555,result);
         });
     } else {
