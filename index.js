@@ -41,12 +41,11 @@ app.post('/webhook', (req, res) => {
     if (re.test(msg)) {
         console.log("Valid", msg);
         var sql = "UPDATE user SET Key = '" + user_id + "' WHERE Rendom = '" + msg + "' ";
-        con.query(sql, function (err, result, fields) {
+        con.query(sql, function (err, result) {
             if (err) throw err;
-  
+            console.log(result.affectedRows + " record(s) updated");
             console.log(555,result);
             console.log(666,user_id);
-
         });
     } else {
         if (msg == "สวัสดี" || msg == "hello") {
