@@ -40,21 +40,14 @@ app.post('/webhook', (req, res) => {
     var re = new RegExp("[r][e][g][i][s][t][e][r]");
     if (re.test(msg)) {
         console.log("Valid", msg);
-        // var sql = "UPDATE user SET Key = '" + user_id + "' WHERE Rendom = '" + msg + "' ";
-        // con.query(sql, function (err, result) {
-        //     if (err) throw err;
-        //     console.log(result.affectedRows + " record(s) updated");
-        //     console.log(555,result);
-        //     console.log(666,user_id);
-        // });
-        con.query("UPDATE user SET Key = '123' WHERE Rendom = 'register850256' ", function (err, result, fields) {
-            // if any error while executing above query, throw error
+        var sql = "SELECT * FROM user WHERE Rendom = '" + msg + "' ";
+        con.query(sql, function (err, result, fields) {
             if (err) throw err;
-            // if there is no error, you have the result
-            console.log(result);
-          });
+  
+            console.log(555,result);
+            console.log(666,user_id);
 
-
+        });
     } else {
         if (msg == "สวัสดี" || msg == "hello") {
             reply(user_id, "สวัสดีเราคือใคร ใครคือเรา")
