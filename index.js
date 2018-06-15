@@ -43,7 +43,7 @@ app.post('/webhook', (req, res) => {
         var sql = "SELECT * FROM user WHERE Rendom = '" + msg + "' ";
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
-            var sqli = "UPDATE user SET Key = '" + user_id + "' WHERE ID = '23' ";
+            var sqli = "UPDATE user SET Key = '" + user_id + "'  ";
 
             console.log(555,result);
             console.log(666,user_id);
