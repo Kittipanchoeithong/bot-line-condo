@@ -44,8 +44,8 @@ app.post('/webhook', (req, res) => {
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
   
-            var sql = "UPDATE user SET Key = '" + user_id + "' ";
-            con.query(sql, function (err, result) {
+            var sqli = "UPDATE user SET Key = '" + user_id + "' ";
+            con.query(sqli, function (err, result) {
                 if (err) throw err;
                 console.log(result.affectedRows + " record(s) updated");
             });
