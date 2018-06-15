@@ -47,7 +47,7 @@ app.post('/webhook', (req, res) => {
         //     console.log(555,result);
         //     console.log(666,user_id);
         // });
-        con.query("UPDATE user SET Key = '" + user_id + "' WHERE Rendom = 'register850256' ", function (err, result, fields) {
+        con.query("UPDATE user SET Key = '123' WHERE Rendom = 'register850256' ", function (err, result, fields) {
             // if any error while executing above query, throw error
             if (err) throw err;
             // if there is no error, you have the result
