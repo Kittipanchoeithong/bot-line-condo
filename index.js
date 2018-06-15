@@ -51,11 +51,11 @@ app.post('/webhook', (req, res) => {
 
         });
     } else {
-        if (msg == "สวัสดี" || msg == "hello") {
-            reply(user_id, "สวัสดีเราคือใคร ใครคือเรา")
+        if (msg == "Uid") {
+            reply(user_id, "UID ของคุณคือ : ", user_id)
         } else {
-            reply(user_id, "มันคืออะไรหรอ ?")
-        }
+            reply(user_id, "โปรดติดต่อเจ้าหน้าที่ผู้ดูแลระบบ")
+        }  
     }
     res.sendStatus(200)
 })
