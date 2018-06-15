@@ -26,7 +26,7 @@ con.connect(function (err) {
 
 
 
-
+//ดึงข้อมูลมาจากwebhook
 app.post('/webhook', (req, res) => {
     let reply_token = req.body.events[0].replyToken
     let user_id = req.body.events[0].source.userId
@@ -36,10 +36,11 @@ app.post('/webhook', (req, res) => {
     // reply(reply_token)
     // reply(user_id)
 
+    //ตรวจสอบข้อความเข้า
     var re = new RegExp("[r][e][g][i][s][t][e][r]");
     if (re.test(msg)) {
         console.log("Valid", msg);
-        var sql = "SELECT * FROM user";
+        var sql = "SELECT * FROM user WHERE Rendom = 'msg' ";
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
             console.log(result);
@@ -54,7 +55,7 @@ app.post('/webhook', (req, res) => {
     res.sendStatus(200)
 })
 
-
+//ส่งให้ผู้ใช้เข้าไลน์
 function reply(user_id, send_msg) {
     let headers = {
         'Content-Type': 'application/json',
