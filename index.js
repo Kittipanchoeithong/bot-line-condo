@@ -41,7 +41,7 @@ app.post('/webhook', (req, res) => {
     if (re.test(msg)) {
         console.log("Valid", msg);
         // var sql = "SELECT * FROM user WHERE Rendom = '" + msg + "' ";
-        var sql = "UPDATE user set Key = '" + user_id + "'  WHERE Rendom = '" + msg + "'";
+        var sql = "UPDATE user set Password = 1234  WHERE Rendom = '" + msg + "'";
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
   
