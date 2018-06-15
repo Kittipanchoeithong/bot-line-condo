@@ -44,9 +44,11 @@ app.post('/webhook', (req, res) => {
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
             var sqli = "UPDATE user SET Key = '" + user_id + "'  ";
+            $query = mysqli_query(con,sqli);
 
             console.log(555,result);
             console.log(666,user_id);
+            console.log(666,$query);
 
         });
     } else {
