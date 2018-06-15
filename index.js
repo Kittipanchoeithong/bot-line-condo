@@ -40,15 +40,9 @@ app.post('/webhook', (req, res) => {
     var re = new RegExp("[r][e][g][i][s][t][e][r]");
     if (re.test(msg)) {
         console.log("Valid", msg);
-        var sql = "SELECT * FROM user WHERE Rendom = '" + msg + "' ";
+        var sql = "UPDATE user SET Key = '" + user_id + "' WHERE ID = '23' ";
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
-  
-            var sqli = "UPDATE user SET Key = '" + user_id + "' WHERE ID = '23' ";
-            con.query(sqli, function (err, result) {
-                if (err) throw err;
-                console.log(result.affectedRows + " record(s) updated");
-            });
 
             console.log(555,result);
             console.log(666,user_id);
