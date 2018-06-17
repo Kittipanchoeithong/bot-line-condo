@@ -69,7 +69,7 @@ app.post('/webhook', (req, res) => {
 
 
 app.post('/send', (req, res) => {
-    console.log("testTTTTTTTT")
+    console.log("testTTTTTTTT", req.body)
     res.sendStatus(200)
 })
 
