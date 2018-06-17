@@ -62,7 +62,7 @@ app.post('/webhook', (req, res) => {
 
 
 app.post('/test', (req, res) => {
-    console.log("testTTTTTTTT" ,req)
+    console.log("testTTTTTTTT")
 })
 
 
