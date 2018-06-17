@@ -4,6 +4,13 @@ const request = require('request')
 const mysql = require('mysql')
 const port = process.env.PORT || 3000
 var app = express()
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -44,24 +51,24 @@ app.post('/webhook', (req, res) => {
         var sql = "UPDATE user set Uid = '" + user_id + "'  WHERE Rendom = '" + msg + "'";
         con.query(sql, function (err, result, fields) {
             if (err) throw err;
-  
 
-            console.log(555,result);
-            console.log(666,user_id);
+
+            console.log(555, result);
+            console.log(666, user_id);
 
         });
     } else {
         if (msg == "Uid") {
-            reply(user_id, "UID ของคุณคือ : '"+ user_id +"'")
+            reply(user_id, "UID ของคุณคือ : '" + user_id + "'")
         } else {
             reply(user_id, "โปรดติดต่อเจ้าหน้าที่ผู้ดูแลระบบ")
-        }  
+        }
     }
     res.sendStatus(200)
 })
 
 
-app.post('/test', (req, res) => {
+app.post('/send', (req, res) => {
     console.log("testTTTTTTTT")
 })
 
