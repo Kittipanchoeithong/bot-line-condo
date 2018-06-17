@@ -80,6 +80,7 @@ app.post('/send', (req, res) => {
 
 //ส่งให้ผู้ใช้เข้าไลน์
 function reply(user_id, send_msg) {
+    console.log(user_id, send_msg)
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer {a7FvVoAOXfMdUFIjyUvYlasoDBi0OP8ZvkzALFr1SmgaFs+eeTwzmqj/Z+MWwRlCpCZgpU1SqLHPAcULoCfEmzxkmkY8NaEyyHR7Sbl1t1VFCMZMoxNA1NeB+VI4VdIcqpOZ0sy2ThZl+C3v6zpk3wdB04t89/1O/w1cDnyilFU=}'
