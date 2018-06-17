@@ -60,6 +60,13 @@ app.post('/webhook', (req, res) => {
     res.sendStatus(200)
 })
 
+
+app.post('/test', (req, res) => {
+    console.log("testTTTTTTTT" ,req)
+})
+
+
+
 //ส่งให้ผู้ใช้เข้าไลน์
 function reply(user_id, send_msg) {
     let headers = {
