@@ -69,7 +69,7 @@ app.post('/webhook', (req, res) => {
 
 
 app.post('/send', (req, res) => {
-    // console.log("testTTTTTTTT", req.body)
+    console.log("testTTTTTTTT", req.body)
     var uid = req.body.uid
     var msg = req.body.message
     reply(uid, msg)
