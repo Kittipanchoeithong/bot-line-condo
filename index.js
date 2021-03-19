@@ -83,7 +83,7 @@ function reply(user_id, send_msg) {
     console.log(user_id, send_msg)
     let headers = {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer {C6Jt9NDqPWWuKIwaPlQdPXxcSteR4qzoMMBXCWZ+dLi2x5bC9TTyO17mkb5rsq3w5tvTd+hfzE5O588oWNl8S2z2vB259yGT2y44GbJ2su3offmkO0DzqKexUMSL+E4PzA/cwSJ7/0WzPIIzxZ7N5QdB04t89/1O/w1cDnyilFU=}'
+        'Authorization': 'Bearer {u4zLKOjCi/CmxNftaSU3VLdqYB3nG0v2h6b5LcgxZTwoTsbs82ktegbC4YIVfTOl5tvTd+hfzE5O588oWNl8S2z2vB259yGT2y44GbJ2su0BB9pXB9jMLYha0AdtAd5HR2OayiSXzGWMQpWQq1c/tQdB04t89/1O/w1cDnyilFU=}'
     }
     let body = JSON.stringify({
         to: user_id,
