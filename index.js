@@ -15,9 +15,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 var con = mysql.createConnection({
-    host: "35.186.157.171",
+    host: "127.0.0.1",
     user: "root",
-    password: "123456",
+    password: "",
     database: "condo"
 });
 
